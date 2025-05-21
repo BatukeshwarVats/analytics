@@ -1,0 +1,5 @@
+venv/
+sample_logs.json
+.env
+
+__pycache__/
