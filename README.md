@@ -47,7 +47,19 @@ This application is built with a microservices architecture:
    docker-compose up -d
    ```
 
-4. The API will be available at http://localhost:8000
+4. Generate Sample data:
+    ```
+    docker-compose exec api python scripts/generate_sample_logs.py --jobs 5 --days 3 --output sample_logs.json
+    ```
+
+5. Ingest Generated data:
+    ```
+    docker-compose exec api python scripts/ingest_sample_logs.py --file sample_logs.json --delay 0.2
+    ```
+
+6. The API will be available at http://localhost:8000
+
+
 
 ### API Documentation
 
@@ -173,13 +185,6 @@ Options:
    ```
    uvicorn app.main:app --reload
    ```
-
-### Running Tests
-
-```
-pytest
-```
-
 ## Project Structure
 
 ```
@@ -194,7 +199,6 @@ pytest
 │   ├── utils/              # Utility functions
 │   └── workers/            # Celery tasks
 ├── scripts/                # Utility scripts
-├── tests/                  # Test cases
 ├── .env.example            # Example environment variables
 ├── docker-compose.yml      # Docker services configuration
 ├── Dockerfile              # Docker build instructions
