@@ -33,8 +33,8 @@ This application is built with a microservices architecture:
 
 1. Clone the repository:
    ```
-   git clone https://github.com/your-username/spark-analytics.git
-   cd spark-analytics
+   git clone https://github.com/BatukeshwarVats/analytics.git
+   cd analytics
    ```
 
 2. Copy the example environment file:
@@ -213,11 +213,3 @@ pytest
 4. **Caching Strategy**: Job-specific analytics are cached indefinitely until the job is updated. Daily summaries are cached but refreshed when new jobs are processed for that date.
 
 5. **Error Handling**: Failed tasks in a job don't prevent the job from being processed. Error information is stored for debugging.
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details. 

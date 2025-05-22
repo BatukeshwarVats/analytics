@@ -116,15 +116,10 @@ def generate_sample_logs(num_jobs: int = 5, days_back: int = 3) -> List[Dict[str
         List of event dictionaries
     """
     all_events = []
-    
-    # Starting job_id
     start_job_id = 100
-    
-    # Generate events for each job
     for i in range(num_jobs):
         job_id = start_job_id + i
         user = random.choice(USERS)
-        # Random start time within the past N days
         days_ago = random.randint(0, days_back)
         hours_ago = random.randint(0, 23)
         start_time = datetime.datetime.now(datetime.timezone.utc) - datetime.timedelta(days=days_ago, hours=hours_ago)

@@ -12,21 +12,14 @@ class Settings(BaseSettings):
     """
     model_config = SettingsConfigDict(case_sensitive=True, env_file=".env")
     
-    # API configurations
     API_V1_STR: str = "/api/v1"
     PROJECT_NAME: str = "Spark Analytics Service"
     
-    # Database configurations
     DATABASE_URL: PostgresDsn
-    
-    # Redis configurations
     REDIS_URL: RedisDsn
-    
-    # Celery configurations
     CELERY_BROKER_URL: str
     CELERY_RESULT_BACKEND: str
     
-    # Processing configurations
     PROCESS_INTERVAL_SECONDS: int = 60
     CACHE_TTL_SECONDS: int = 3600  # 1 hour
     
